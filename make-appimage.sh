@@ -12,8 +12,6 @@ export DESKTOP=/usr/share/applications/navit.desktop
 export DEPLOY_LOCALE=1
 
 # Deploy dependencies
-# the modules are also passed on their own, a directory alone does not
-# deploy their dependencies nor turn on toolkit detection
 quick-sharun \
 	/usr/bin/navit     \
 	/usr/lib/navit/*   \
