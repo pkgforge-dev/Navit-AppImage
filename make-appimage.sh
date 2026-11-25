@@ -14,11 +14,13 @@ export DEPLOY_LOCALE=1
 # Deploy dependencies
 quick-sharun \
 	/usr/bin/navit     \
+	/usr/bin/gpsd      \
 	/usr/lib/navit/*   \
 	/usr/lib/navit/*/* \
 	/usr/share/navit
 
 # Additional changes can be done in between here
+cp navit-gpsd.hook ./AppDir/bin/
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage

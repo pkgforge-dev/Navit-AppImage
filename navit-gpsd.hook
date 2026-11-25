@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# navit's default config talks to gpsd on localhost:2947, so start the
+# bundled daemon when the host does not run one already. gpsd exits by
+# itself when the port is taken or when it cannot create its socket.
+gpsd_socket="${XDG_RUNTIME_DIR:-$CACHEDIR}/navit-gpsd.sock"
+if [ -x "$APPDIR"/bin/gpsd ]; then
+	"$APPDIR"/bin/gpsd -n -F "$gpsd_socket" >/dev/null 2>&1 &
+fi

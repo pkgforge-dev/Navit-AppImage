@@ -35,7 +35,7 @@ git clone https://github.com/navit-gps/navit.git navit && (
 	git checkout "$TAG"
 	echo "$TAG" > ~/version
 
-	patch -p1 -N -r - -i ../fix-module-install-path.patch
+	git apply ../patches/*.patch
 	cmake -B build                   \
 		-DCMAKE_BUILD_TYPE=Release   \
 		-DCMAKE_INSTALL_PREFIX=/usr  \
